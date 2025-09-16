@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- DO NOT MODIFY ANY PART OF THIS HTML FILE (USE THIS AS IS) -->
+    
+    <h1>Challenge 4 - Memory Card Matching Game (Part 1)</h1>
+
+    <table id="select-table">
+        <tr>
+            <td>
+                Select at least 1 friend<br>
+                (you can select multiple):
+            </td>
+            <td>
+                <!-- Two options are pre-selected so that during testing, 
+                       you don't have to keep selecting option(s) again -->
+                <select id="friends" size="6" multiple>
+                    <option selected value="brandon">Brandon</option>
+                    <option selected value="darryl">Darryl</option>
+                    <option value="nick">Nick</option>
+                    <option value="yinkit">Yin Kit</option>
+                    <option value="chein">Chein</option>
+                    <option value="supreme">Supreme Leader</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <button onclick="generate_board()">
+                    Click to Generate a New Game Board
+                </button>
+            </td>
+        </tr>
+    </table>
+
+
+    <div id="game-board">
+        A new game board will replace this text
+    </div>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+#inner-box {
+    border: 2px dotted red;
+    text-align: left;
+}
+
+.bold-blue-text {
+    color: blue;
+    font-weight: bold;
+}
+
+#result {
+    width: 300px;
+    height: 120px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+
+    background-color: rgb(182, 182, 182);
+    color: green;
+}

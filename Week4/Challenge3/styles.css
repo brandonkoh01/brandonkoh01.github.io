@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+button {
+    padding: 10px 10px;
+    margin-bottom: 5px;
+    width: 100px;
+    font-weight: bold;
+    background-color: darkblue;
+    color: white;
+}
+
+img {
+    width: 95%;
+}
+
+#outer-box {
+    display: flex;
+    justify-content: center;
+}
+
+#left-child {
+    margin-right: 10px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px dashed black;
+}
+
+#photo-box {
+    margin-top: 10px;
+}
