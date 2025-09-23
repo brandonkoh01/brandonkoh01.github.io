@@ -1,0 +1,54 @@
+.card-img-top {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    padding: 4px;
+    transition: transform 1s ease-in-out;
+}
+
+.age-pill {
+    padding: 0.5rem 0.5rem; /* Adjust the padding to make it larger */
+    font-size: 1rem; /* Increase the font size */
+}
+
+.card:hover.blue {
+    border-color: rgb(13, 110, 253);
+    box-shadow: 0px 0px 10px 2px rgb(13, 110, 253);
+}
+
+.card:hover.pink {
+    border-color: rgb(213, 13, 253);
+    box-shadow: 0px 0px 10px 2px rgb(213, 13, 253);
+}
+
+.card-img-top:hover {
+    animation: spin 3s linear forwards;
+}
+
+.card:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Spin
+   - Make the image inside of each card spin horizontally when mouse over it.
+*/
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Bounce
+   - Make the card bounce slightly when the user hovers over it, drawing attention to the content.
+*/
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

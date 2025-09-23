@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Week 5 - Challenge 0 - Cocktails</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons (for heart icon later) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header banner -->
+    <header class="py-4 gradient-banner">
+        <div class="container">
+            <h1 class="h3 mb-0">Week 5 - Challenge 0</h1>
+            <p class="mb-0 text-light opacity-75">Every cocktail is a tiny vacation in a glass!</p>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container my-4">
+
+        <!-- Controls -->
+        <section class="card p-3 mb-4 shadow-sm">
+
+            <form id="controls" class="row g-3 align-items-end">
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-8 col-md-4">
+                    <label for="q" class="form-label">Search by name</label>
+                    <input id="name_search" name="name_search" type="search" class="form-control"
+                        placeholder="e.g., margarita">
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-6 col-sm-4 col-md-2">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" class="form-select">
+                        <option value="">All</option>
+                    </select>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-6 col-sm-4 col-md-2">
+                    <label for="alcoholic" class="form-label">Alcoholic</label>
+                    <select id="alcoholic" class="form-select">
+                        <option value="">All</option>
+                        <option value="alcoholic">Alcoholic</option>
+                        <option value="nonalcoholic">Non Alcoholic</option>
+                    </select>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-6 col-sm-4 col-md-2">
+                    <label for="sort" class="form-label">Sort</label>
+                    <select id="sort" class="form-select">
+                        <option value="name-asc" selected>Name A → Z</option>
+                        <option value="name-desc">Name Z → A</option>
+                    </select>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-6 col-sm-4 col-md-2">
+                    <label for="pageSize" class="form-label">Per page</label>
+                    <select id="pageSize" class="form-select">
+                        <option>6</option>
+                        <option selected>9</option>
+                        <option>12</option>
+                    </select>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Task 5 - Alerts -->
+        <section id="alerts"></section>
+
+        <!-- Task 4 - Display Drinks -->
+        <section id="results" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></section>
+
+        <!-- Task 1 - Pagination -->
+        <nav class="d-flex justify-content-between align-items-center mt-3" aria-label="Pagination">
+        <!-- <nav class="pagination" aria-label="Pagination"> -->
+            <button id="prev" class="btn btn-outline-secondary" disabled>Prev</button>
+            <span id="pageInfo" class="small text-muted">Page 1 of 1</span>
+            <button id="next" class="btn btn-outline-secondary" disabled>Next</button>
+        </nav>
+    </main>
+
+
+    <!-- Task 11 - Permanent IMH Hotline Popup -->
+    <div id="imh-hotline">
+        <strong>Institute of Mental Health (IMH) Addictions Management Hotline</strong><br>
+        <strong>Hotline:</strong> 1771 &nbsp; | &nbsp;
+        <strong>WhatsApp:</strong> 6669-1771
+    </div>
+
+
+    <!-- Toasts -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

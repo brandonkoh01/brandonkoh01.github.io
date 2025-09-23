@@ -1,0 +1,112 @@
+{
+  "drinks": [
+    {
+      "id": "d001",
+      "name": "Citrus Spark",
+      "category": "Mocktail",
+      "alcoholic": "Non_Alcoholic",
+      "glass": "Highball glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Add ice, orange juice, soda, and garnish with mint.",
+      "ingredient1": "Orange Juice",
+      "ingredient2": "Soda",
+      "ingredient3": "Mint"
+    },
+    {
+      "id": "d002",
+      "name": "Ruby Cooler",
+      "category": "Ordinary_Drink",
+      "alcoholic": "Alcoholic",
+      "glass": "Collins glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Stir over ice, top with tonic.",
+      "ingredient1": "Gin",
+      "ingredient2": "Tonic",
+      "ingredient3": "Lime"
+    },
+    {
+      "id": "d003",
+      "name": "Berry Breeze",
+      "category": "Cocktail",
+      "alcoholic": "Non_Alcoholic",
+      "glass": "Wine glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Shake berries with ice, strain, top with soda.",
+      "ingredient1": "Strawberry",
+      "ingredient2": "Blueberry",
+      "ingredient3": "Soda"
+    },
+    {
+      "id": "d004",
+      "name": "Ginger Fizz",
+      "category": "Ordinary_Drink",
+      "alcoholic": "Alcoholic",
+      "glass": "Highball glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Build in glass, stir gently.",
+      "ingredient1": "Vodka",
+      "ingredient2": "Ginger Ale",
+      "ingredient3": "Lime"
+    },
+    {
+      "id": "d005",
+      "name": "Minty Limeade",
+      "category": "Mocktail",
+      "alcoholic": "Non_Alcoholic",
+      "glass": "Collins glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Muddle mint, add lime and soda.",
+      "ingredient1": "Lime",
+      "ingredient2": "Mint",
+      "ingredient3": "Soda"
+    },
+    {
+      "id": "d006",
+      "name": "Tropical Dawn",
+      "category": "Cocktail",
+      "alcoholic": "Alcoholic",
+      "glass": "Cocktail glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Shake with ice and strain.",
+      "ingredient1": "Rum",
+      "ingredient2": "Pineapple",
+      "ingredient3": "Grenadine"
+    },
+    {
+      "id": "d007",
+      "name": "Cucumber Cooler",
+      "category": "Mocktail",
+      "alcoholic": "Non_Alcoholic",
+      "glass": "Highball glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Combine over ice, stir.",
+      "ingredient1": "Cucumber",
+      "ingredient2": "Soda",
+      "ingredient3": "Mint"
+    },
+    {
+      "id": "d008",
+      "name": "Espresso Kick",
+      "category": "Ordinary_Drink",
+      "alcoholic": "Alcoholic",
+      "glass": "Martini glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Shake espresso with vodka and ice.",
+      "ingredient1": "Vodka",
+      "ingredient2": "Espresso",
+      "ingredient3": "Sugar Syrup"
+    },
+    {
+      "id": "d009",
+      "name": "Sunset Sour",
+      "category": "Cocktail",
+      "alcoholic": "Alcoholic",
+      "glass": "Old-fashioned glass",
+      "photo_url": "placeholder.png",
+      "instructions": "Shake, strain over ice, garnish citrus.",
+      "ingredient1": "Whisky",
+      "ingredient2": "Lemon",
+      "ingredient3": "Bitters"
+    }
+  ]
+}
