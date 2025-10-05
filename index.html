@@ -1,192 +1,926 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandon Koh | Software Engineer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link href="portfolioStyles.css" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#0062E6',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        secondary: {
+                            500: '#33AEFF',
+                            600: '#db2777',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 20s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '33%': { transform: 'translate(50px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-50px, 50px) scale(0.9)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="bi bi-code-slash"></i> Brandon
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
+<body class="font-sans text-slate-900 bg-white transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2 text-xl font-bold text-slate-900">
+                    <span>Brandon's Portfolio</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="#home"
+                            class="nav-link active text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                    <li><a href="#about"
+                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                    <li><a href="#skills"
+                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Skills</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <li><a href="#projects"
+                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Projects</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Experience</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Contact</a>
                     </li>
                 </ul>
+
+                <!-- Hamburger -->
+                <button id="navToggle"
+                    class="md:hidden w-10 h-10 rounded-lg bg-slate-100 flex flex-col items-center justify-center space-y-1.5 transition-all"
+                    aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line w-6 h-0.5 bg-slate-900 transition-all"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-slate-900 transition-all"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-slate-900 transition-all"></span>
+                </button>
             </div>
         </div>
+
+        <!-- Mobile Navigation -->
+        <div id="navMenu" class="md:hidden hidden bg-white border-t border-slate-200">
+            <ul class="px-4 py-4 space-y-3">
+                <li><a href="#home"
+                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Home</a>
+                </li>
+                <li><a href="#about"
+                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">About</a>
+                </li>
+                <li><a href="#skills"
+                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Skills</a>
+                </li>
+                <li><a href="#projects"
+                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Projects</a>
+                </li>
+                <li><a href="#experience"
+                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Experience</a>
+                </li>
+                <li><a href="#contact"
+                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <section id="home" class="hero-section">
-        <div class="particles"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Brandon Koh</h1>
-                        <h2 class="hero-subtitle">Software Engineer</h2>
-                        <div class="d-flex flex-wrap gap-3">
-                            <a role="button" href="https://github.com/baconwrappedshrimp" class="btn btn-gradient">
-                                <i class="bi bi-rocket-takeoff me-2"></i>View My Work
-                            </a>
-                            <a href="#contact" class="btn btn-outline-glass">
-                                <i class="bi bi-chat-dots me-2"></i>Get In Touch
-                            </a>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="text-center lg:text-left space-y-6">
+                    <p class="text-lg text-slate-600 animate-fade-up">Hello👋, I'm</p>
+                    <h1
+                        class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent animate-fade-up">
+                        Brandon,
+                    </h1>
+                    <div class="animate-fade-up">
+                        <h2
+                            class="hero-subtitle text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 inline-block">
+                            <span class="cursor animate-blink">|</span>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-up">
+                        A Software Engineering undergraduate with experience in full-stack development, mobile
+                        applications, and API design.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up">
+                        <a href="#projects"
+                            class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            View My Work
+                            <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-slate-300 text-slate-900 font-semibold hover:border-secondary-500 hover:text-secondary-500 transition-all duration-300">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="flex gap-4 justify-center lg:justify-start animate-fade-up">
+                        <a href="https://github.com/brandonkoh01" target="_blank" rel="noopener noreferrer"
+                            class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all hover:-translate-y-1"
+                            aria-label="GitHub profile">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/brandonkohws" target="_blank" rel="noopener noreferrer"
+                            class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all hover:-translate-y-1"
+                            aria-label="LinkedIn profile">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:brandonkoh01@gmail.com"
+                            class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all hover:-translate-y-1"
+                            aria-label="Email contact">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Code -->
+                <div class="hidden lg:block animate-fade-left">
+                    <div class="glass-card rounded-2xl p-6 shadow-2xl">
+                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-200">
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                            </div>
+                            <span class="text-xs text-slate-500 font-mono">developer.js</span>
+                        </div>
+                        <div class="font-mono text-sm space-y-1">
+                            <div><span class="text-purple-500">const</span> <span class="text-red-400">developer</span>
+                                <span class="text-slate-500">=</span> <span class="text-yellow-500">{</span>
+                            </div>
+                            <div class="pl-4"><span class="text-cyan-400">name</span><span
+                                    class="text-slate-500">:</span> <span class="text-green-400">'Brandon
+                                    Koh'</span><span class="text-slate-500">,</span></div>
+                            <div class="pl-4"><span class="text-cyan-400">role</span><span
+                                    class="text-slate-500">:</span> <span class="text-green-400">'Software
+                                    Engineer'</span><span class="text-slate-500">,</span></div>
+                            <div class="pl-4"><span class="text-cyan-400">university</span><span
+                                    class="text-slate-500">:</span> <span class="text-green-400">'Singapore Management
+                                    University'</span><span class="text-slate-500">,</span></div>
+                            <div class="pl-4"><span class="text-cyan-400">experience</span><span
+                                    class="text-slate-500">:</span> <span class="text-green-400">'4+ years'</span><span
+                                    class="text-slate-500">,</span></div>
+                            <div class="pl-4"><span class="text-cyan-400">skills</span><span
+                                    class="text-slate-500">:</span> <span class="text-yellow-500">[</span></div>
+                            <div class="pl-8"><span class="text-green-400">'Java'</span><span
+                                    class="text-slate-500">,</span> <span
+                                    class="text-green-400">'JavaScript'</span><span class="text-slate-500">,</span>
+                                <span class="text-green-400">'TypeScript'</span><span class="text-slate-500">,</span>
+                                <span class="text-green-400">'PHP'</span><span class="text-slate-500">,</span>
+                                <span class="text-green-400">'SQL'</span><span class="text-slate-500">,</span>
+                            </div>
+                            <div class="pl-8"><span class="text-green-400">'React.js'</span><span
+                                    class="text-slate-500">,</span> <span class="text-green-400">'Vue.js'</span><span
+                                    class="text-slate-500">,</span> <span class="text-green-400">'Expo'</span><span
+                                    class="text-slate-500">,</span> <span class="text-green-400">'Spring
+                                    Boot'</span><span class="text-slate-500">,</span> <span
+                                    class="text-green-400">'Tailwind CSS'</span>
+                            </div>
+                            <div class="pl-4"><span class="text-yellow-500">]</span><span
+                                    class="text-slate-500">,</span></div>
+                            <div class="pl-4"><span class="text-cyan-400">hobbies</span><span
+                                    class="text-slate-500">:</span> <span class="text-yellow-500">[</span></div>
+                            <div class="pl-8"><span class="text-green-400">'Running'</span><span
+                                    class="text-slate-500">,</span> <span class="text-green-400">'Reading'</span><span
+                                    class="text-slate-500">,</span>
+                            </div>
+                            <div class="pl-8"><span class="text-green-400">'Hiking'</span><span
+                                    class="text-slate-500">,</span> <span class="text-green-400">'Watching
+                                    movies'</span>
+                            </div>
+                            <div class="pl-4"><span class="text-yellow-500">]</span></div>
+                            <div class="pl-1"><span class="text-yellow-500">}</span><span
+                                    class="text-slate-500">;</span></div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+
     </section>
-    <section id="about" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-6 fade-in mb-4">
-                    <div class="rounded-circle mx-auto mb-4" style="width: 300px; height: 300px; 
-                        background-image: url('memoji.jpeg'); 
-                        background-size: cover; 
-                        background-position: center; 
-                        background-repeat: no-repeat;">
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Get
+                    To Know Me</span>
+                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">About Me</h2>
+                <p class="mt-4 text-lg text-slate-600">Passionate about education and creating impactful solutions</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12 items-start">
+                <!-- About Text -->
+                <div class="lg:col-span-2">
+                    <div class="glass-card rounded-2xl p-8 space-y-6">
+                        <h3 class="text-2xl font-bold">Hi👋, I'm Brandon.</h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            Software engineering intrigues me because it turns everyday problems into opportunities for
+                            innovation. As a Software Engineering sophomore at Singapore Management University, I'm
+                            passionate about developing solutions that don't just automate tasks, but genuinely improve
+                            how people live and work.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed">
+                            With over a year of experience at Better Age Solutions, I've worked on a last-mile delivery
+                            mobile
+                            app serving Singapore's public healthcare institutions and 100+ active users, on top of
+                            building a route
+                            optimisation API that improved
+                            logistics
+                            efficiency through the generation of optimised multi-vehicle routes.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed">
+                            Beyond coding, I'm dedicated to education as a Teaching Assistant for both programming and
+                            writing courses, while managing a 128-person peer learning program as a HR director at SMU
+                            Coders Assembly. And in my free time, I enjoy reading, running, hiking, and watching movies!
+                        </p>
                     </div>
                 </div>
+                <!-- Education Card -->
+                <div class="glass-card rounded-2xl p-6">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Education</h3>
+                    <p class="text-primary-500 font-semibold">Singapore Management University</p>
+                    <p class="text-slate-700 text-sm">BSc (Software Engineering)</p>
+                    <p class="text-slate-500 text-xs mt-2">Aug 2024 - Jul 2028</p>
+                    <div class="mt-4 pt-4 border-t border-slate-300">
+                        <p class="text-sm font-semibold text-slate-900 mb-2">Achievements:</p>
+                        <p class="text-slate-700 text-sm">Dean's List AY24/25</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-300">
+                        <p class="text-sm font-semibold text-slate-900 mb-2">Relevant Coursework:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">Algorithms</span>
+                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">OOP</span>
+                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">Web Dev</span>
+                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">OS &
+                                Networking</span>
+                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">Data
+                                Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
-                <div class="col-lg-6 fade-in">
-                    <h3 class="mb-4">Passionate Software Engineer</h3>
-                    <p class="text-muted mb-4">
-                        Software engineering intrigues me because it turns everyday problems into opportunities for
-                        innovation. As a Software Engineering sophomore at Singapore Management University, I'm
-                        passionate about developing solutions that don't just automate tasks, but genuinely improve how
-                        people live and work.
-                    </p>
 
-                    <!-- Collapsible Content -->
-                    <div class="accordion" id="aboutAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne">
-                                    <i class="bi bi-mortarboard me-2"></i>Education
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                data-bs-parent="#aboutAccordion">
-                                <div class="accordion-body">
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2"><strong>Bachelor of Science - BSc, Software
-                                                Engineering</strong> - Singapore Managenment University (2024 - 2028)
+    <!-- Experience Section -->
+    <section id="experience" class="py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">My
+                    Career
+                    thus far</span>
+                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Work Experience</h2>
+                <p class="mt-4 text-lg text-slate-600">Professional milestones</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Timeline Line -->
+                <div
+                    class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-secondary-500 hidden md:block">
+                </div>
+                <div
+                    class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-secondary-500 md:hidden">
+                </div>
+
+                <div class="space-y-12">
+                    <div class="relative pl-20 md:pl-0">
+                        <div
+                            class="absolute left-8 md:left-1/2 w-5 h-5 bg-pink-500 rounded-full border-4 border-white transform md:-translate-x-1/2 shadow-lg">
+                        </div>
+                        <div class="md:grid md:grid-cols-2 md:gap-8">
+                            <div class="md:text-right mb-4 md:mb-0">
+                                <div class="glass-card rounded-xl p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full text-xs font-semibold mb-3">June
+                                        2024 - October 2025</span>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-1">Software Engineer</h3>
+                                    <h4 class="text-secondary-600 font-semibold mb-4">Better Age Solutions Pte. Ltd.
+                                    </h4>
+                                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
+                                        Collaborated with a team to redevelop
+                                        a last-mile delivery
+                                        mobile app serving Singapore's public healthcare institutions and 100+ active users using TypeScript, Expo, and SQLite.
+                                    </p>
+                                    <ul class="text-left text-sm text-slate-700 space-y-2">
+                                        <li class="flex items-start">
+                                            <span class="text-secondary-600 mr-2 mt-1">▹</span>
+                                            <span>Built a route optimisation API to reduce delivery times and
+                                                operational
+                                                costs.</span>
                                         </li>
-                                        <li class="mb-2"><strong>Diploma with Merit in Mobile Software
-                                                Development</strong> - Republic Polytechnic (2019 - 2021)
+                                        <li class="flex items-start">
+                                            <span class="text-secondary-600 mr-2 mt-1">▹</span>
+                                            <span>Designed an analytics dashboard with interactive route
+                                                visualisation, statistics, and data filtering.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-secondary-600 mr-2 mt-1">▹</span>
+                                            <span>Technologies: Java, TypeScript, Spring Boot, Expo, SQLite, Tailwind
+                                                CSS</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:block"></div>
+                        </div>
+                    </div>
+                    <div class="relative pl-20 md:pl-0">
+                        <div
+                            class="absolute left-8 md:left-1/2 w-5 h-5 bg-green-500 rounded-full border-4 border-white transform md:-translate-x-1/2 shadow-lg">
+                        </div>
+                        <div class="md:grid md:grid-cols-2 md:gap-8">
+                            <div class="hidden md:block"></div>
+                            <div>
+                                <div class="glass-card rounded-xl p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full text-xs font-semibold mb-3">Feb
+                                        2022 - May 2022</span>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-1">Software Engineering Intern</h3>
+                                    <h4 class="text-green-500 font-semibold mb-4">Better Age Solutions Pte. Ltd.
+                                    </h4>
+                                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
+                                        Developed SecureTag, an article verification mobile app for iOS & Android
+                                        leveraging
+                                        NFC technology to authenticate physical documents and products.
+                                    </p>
+                                    <ul class="text-sm text-slate-700 space-y-2">
+                                        <li class="flex items-start">
+                                            <span class="text-green-500 mr-2 mt-1">▹</span>
+                                            <span>Partnered with a shipping company to deploy SecureTag for bill of
+                                                lading authentication.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-green-500 mr-2 mt-1">▹</span>
+                                            <span>Significantly reduced document tampering and fraud in maritime
+                                                logistics.</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-green-500 mr-2 mt-1">▹</span>
+                                            <span>Technologies: C#, ASP.NET Core, Xamarin, MongoDB</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo">
-                                    <i class="bi bi-heart me-2"></i>Interests & Hobbies
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
-                                <div class="accordion-body">
-                                    When I'm not coding, I enjoy exploring new technologies, contributing to open-source
-                                    projects,
-                                    running, hiking, and watching movies!
+                    </div>
+                    <div class="relative pl-20 md:pl-0">
+                        <div
+                            class="absolute left-8 md:left-1/2 w-5 h-5 bg-secondary-500 rounded-full border-4 border-white transform md:-translate-x-1/2 shadow-lg">
+                        </div>
+                        <div class="md:grid md:grid-cols-2 md:gap-8">
+                            <div class="md:text-right mb-4 md:mb-0">
+                                <div class="glass-card rounded-xl p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full text-xs font-semibold mb-3">Aug
+                                        2025 - Present</span>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-1">Teaching Assistant</h3>
+                                    <h4 class="text-secondary-500 font-semibold mb-4">Singapore Management University
+                                    </h4>
+                                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
+                                        Teaching Assistant for Computational Thinking and Programming, Writing and
+                                        Reasoning.
+                                    </p>
+                                    <ul class="text-left text-sm text-slate-700 space-y-2">
+                                        <li class="flex items-start">
+                                            <span class="text-secondary-500 mr-2 mt-1">▹</span>
+                                            <span>Facilitate weekly lessons for first-year undergraduates</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-secondary-500 mr-2 mt-1">▹</span>
+                                            <span>Provide feedback on students' work (e.g. identifying strengths and
+                                                areas for
+                                                improvement, and directing students to
+                                                resources, etc.)</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+                            <div class="hidden md:block"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Experience Section -->
-    <section id="experience" class="section-padding">
-        <div class="container">
-            <h2 class="section-title fade-in text-white">Work Experience</h2>
-            <div class="row fade-in">
-                <div class="col-lg-8 mx-auto">
-                    <div class="timeline">
-                        <!-- Experience Item 3 -->
-                        <div class="glass-card p-4 mb-4">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 mb-3">
-                                    <span class="badge bg-success fs-6">June 2024 - Present</span>
-                                </div>
-                                <div class="col-md-9">
-                                    <h5 class="mb-2">Software Engineer</h5>
-                                    <h6 class="text-primary mb-3">Better Age Solutions Pte. Ltd.</h6>
-                                    <p class="text-muted mb-3">
-                                        Working on Chariots, a last-mile delivery app used by Singapore’s public
-                                        healthcare institutions to deliver medication safely and efficiently to
-                                        patients' homes.
-                                    </p>
-                                    <div>
-                                        <span class="tech-badge">React Native</span>
-                                        <span class="tech-badge">Sprint Boot</span>
-                                        <span class="tech-badge">TypeScript</span>
-                                        <span class="tech-badge">SQLite</span>
-                                    </div>
-                                </div>
-                            </div>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">My
+                    Work</span>
+                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Featured Projects</h2>
+                <p class="mt-4 text-lg text-slate-600">Recent projects I've worked on</p>
+            </div>
+
+            <!-- Project Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button
+                    class="filter-btn active px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-primary-500 to-secondary-500 text-white transition-all duration-300"
+                    data-filter="all">All Projects</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-slate-200 text-slate-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 hover:text-white transition-all duration-300"
+                    data-filter="mobile">Mobile</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-slate-200 text-slate-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 hover:text-white transition-all duration-300"
+                    data-filter="web">Web</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-slate-200 text-slate-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 hover:text-white transition-all duration-300"
+                    data-filter="api">API</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Chariots Mobile -->
+                <article
+                    class="project-card glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+                    data-category="mobile">
+                    <div
+                        class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                        <div
+                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
                         </div>
-                        <div class="glass-card p-4 mb-4">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 mb-3">
-                                    <span class="badge bg-primary fs-6">Feb 2022 - May 2022</span>
-                                </div>
-                                <div class="col-md-9">
-                                    <h5 class="mb-2">Software Engineer</h5>
-                                    <h6 class="text-primary mb-3">Better Age Solutions Pte. Ltd.</h6>
-                                    <p class="text-muted mb-3">
-                                        Developed SecureTag, an article verification application that leverages NFC
-                                        (Near Field Communication) technology to authenticate physical documents and
-                                        products.
-                                    </p>
-                                    <p class="text-muted mb-3">
-                                        Partnered with a shipping company to deploy SecureTag for bill of lading
-                                        verification, significantly reducing the likelihood of document tampering and
-                                        fraud in their operations.
-                                    </p>
-                                    <p class="text-muted mb-3">
-                                        Leveraged Shopify's API to create a Shopify application that integrates
-                                        Shopify merchants with SecureTag, allowing their customers to authenticate their
-                                        products with SecureTag.
-                                    </p>
-                                    <div>
-                                        <span class="tech-badge">C#</span>
-                                        <span class="tech-badge">.NET Core</span>
-                                        <span class="tech-badge">REST APIs</span>
-                                        <span class="tech-badge">MongoDB</span>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Chariots Mobile</h3>
+                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                            Redeveloped a last-mile delivery mobile app serving Singapore's
+                            public healthcare institutions for time-critical medicine delivery.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">TypeScript</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">Expo</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">SQLite</span>
                         </div>
+                        <div class="flex gap-3 pt-4 border-t border-slate-300">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
+                                    <path
+                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
+                                    </path>
+                                </svg>
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Route Optimisation API -->
+                <article
+                    class="project-card glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+                    data-category="api">
+                    <div
+                        class="relative h-48 overflow-hidden bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="10" r="3" />
+                            <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+                        </svg>
+                        <div
+                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Route Optimisation API</h3>
+                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                            Built a route optimisation API for logistics providers delivering medicine for Singapore's
+                            public healthcare institutions, reducing delivery
+                            times and operational costs.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Java</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Spring
+                                Boot</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Jsprit</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">OSRM</span>
+                        </div>
+                        <div class="flex gap-3 pt-4 border-t border-slate-300">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
+                                    <path
+                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
+                                    </path>
+                                </svg>
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Analytics Dashboard -->
+                <article
+                    class="project-card glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+                    data-category="web">
+                    <div
+                        class="relative h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
+                        <div
+                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Analytics Dashboard</h3>
+                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                            Designed an interactive analytics dashboard with route visualisation, statistics, and
+                            data filtering to provide operational insights for logistics providers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">HTML</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">JavaScript</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Leaflet.js</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Tailwind
+                                CSS</span>
+                        </div>
+                        <div class="flex gap-3 pt-4 border-t border-slate-300">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
+                                    <path
+                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
+                                    </path>
+                                </svg>
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: SecureTag NFC App -->
+                <article
+                    class="project-card glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+                    data-category="mobile">
+                    <div
+                        class="relative h-48 overflow-hidden bg-gradient-to-br from-yellow-500 to-orange-400 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                        <div
+                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">SecureTag</h3>
+                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                            Article verification mobile app leveraging NFC technology for authenticating physical
+                            documents
+                            and products, deployed in maritime logistics to reduce document tampering.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">C#</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">ASP.NET
+                                Core</span>
+                            <span
+                                class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">Xamarin</span>
+                            <span
+                                class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">MongoDB</span>
+                        </div>
+                        <div class="flex gap-3 pt-4 border-t border-slate-300">
+                            <a href="https://betteragesolutions.com/#solutions"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
+                                    <path
+                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
+                                    </path>
+                                </svg>
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Earthly -->
+                <article
+                    class="project-card glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+                    data-category="web">
+                    <div
+                        class="relative h-48 overflow-hidden bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            <path d="M2 12h20" />
+                        </svg>
+                        <div
+                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#"
+                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-slate-900">earthly</h3>
+                            <span
+                                class="px-2 py-0.5 bg-accent-500/20 text-accent-600 dark:text-accent-400 text-xs font-semibold rounded">Top
+                                10 Finalist</span>
+                        </div>
+                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                            Collaborated with 5
+                            team
+                            members to build a web platform incentivising eco-friendly habits through habit tracking,
+                            challenges, leaderboards, and rewards for Ellipsis Tech Series Hackathon 2025.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">HTML</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">CSS</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">JavaScript</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">PHP</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">MySQL</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Bootstrap</span>
+                        </div>
+                        <div class="flex gap-3 pt-4 border-t border-slate-300">
+                            <a href="https://github.com/brandonkoh01/earthly"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">What
+                    I Do Best</span>
+                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Skills & Expertise</h2>
+                <p class="mt-4 text-lg text-slate-600">My toolkit to develop software</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Programming Languages -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white mx-auto mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Programming Languages</h3>
+                    <p class="text-slate-700 mb-4 text-sm">Core languages for building solid applications</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">Python</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">Java</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">C#</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">JavaScript</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">TypeScript</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">PHP</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Development -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white mx-auto mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Frontend Development</h3>
+                    <p class="text-slate-700 mb-4 text-sm">Creating responsive & intuitive user interfaces</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">React.js</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">Vue.js</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">HTML5</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">CSS3</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">Tailwind
+                            CSS</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Mobile -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white mx-auto mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                            <line x1="6" y1="6" x2="6.01" y2="6" />
+                            <line x1="6" y1="18" x2="6.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Backend & Mobile</h3>
+                    <p class="text-slate-700 mb-4 text-sm">Building robust APIs and mobile applications</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-blue-600 hover:bg-blue-500 hover:text-white transition-colors cursor-default">Spring
+                            Boot</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-blue-600 hover:bg-blue-500 hover:text-white transition-colors cursor-default">Expo</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-blue-600 hover:bg-blue-500 hover:text-white transition-colors cursor-default">ASP.NET
+                            Core</span>
+                    </div>
+                </div>
+
+                <!-- Database & Tools -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white mx-auto mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Database</h3>
+                    <p class="text-slate-700 mb-4 text-sm">Data Management</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">MongoDB</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">SQLite</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">Supabase</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">MySQL</span>
                     </div>
                 </div>
             </div>
@@ -194,58 +928,94 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Get
+                    In Touch</span>
+                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Contact Me</h2>
+                <p class="mt-4 text-lg text-slate-600">Let's connect!</p>
+            </div>
 
-            <!-- Contact Info Cards -->
-            <div class="row mt-5 fade-in">
-                <div class="col-md-4 mb-3">
-                    <div class="glass-card p-4 text-center h-100">
-                        <div class="skill-icon mx-auto mb-3">
-                            <i class="bi bi-envelope"></i>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+
+
+                    <!-- Location Card -->
+                    <div
+                        class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-red-500 flex items-center justify-center text-white mx-auto mb-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
                         </div>
-                        <h5>Email</h5>
-                        <p class="text-muted">brandonkoh01@gmail.com</p>
-                        <a href="mailto:brandonkoh01@gmail.com" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-envelope me-1"></i>Send Email
-                        </a>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Location</h3>
+                        <p class="text-slate-700 text-sm">Singapore</p>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div
+                        class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                        <div
+                            class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white mx-auto mb-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Email</h3>
+                        <a href="mailto:brandonkoh01@gmail.com"
+                            class="text-slate-700 text-sm hover:text-primary-500 transition-colors break-all">brandonkoh01@gmail.com</a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="glass-card p-4 text-center h-100">
-                        <div class="skill-icon mx-auto mb-3">
-                            <i class="bi bi-linkedin"></i>
-                        </div>
-                        <h5>LinkedIn</h5>
-                        <p class="text-muted">Connect with me</p>
-                        <a href="https://www.linkedin.com/in/brandonkohws/" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-linkedin me-1"></i>Connect
+
+                <!-- Social Links Section -->
+                <div class="mt-12 text-center">
+                    <p class="text-slate-700 mb-6">My socials</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="https://github.com/brandonkoh01" target="_blank" rel="noopener noreferrer"
+                            class="glass-card w-14 h-14 rounded-full flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all hover:-translate-y-1"
+                            aria-label="GitHub profile">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
                         </a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="glass-card p-4 text-center h-100">
-                        <div class="skill-icon mx-auto mb-3">
-                            <i class="bi bi-github"></i>
-                        </div>
-                        <h5>GitHub</h5>
-                        <p class="text-muted">Check out my work</p>
-                        <a href="https://github.com/baconwrappedshrimp" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-github me-1"></i>Follow
+                        <a href="https://linkedin.com/in/brandonkohws" target="_blank" rel="noopener noreferrer"
+                            class="glass-card w-14 h-14 rounded-full flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all hover:-translate-y-1"
+                            aria-label="LinkedIn profile">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:brandonkoh01@gmail.com"
+                            class="glass-card w-14 h-14 rounded-full flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all hover:-translate-y-1"
+                            aria-label="Email contact">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="portfolio.js"></script>
 
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-slate-500 text-sm">Designed & built with lots of caffeine from Singapore.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
