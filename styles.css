@@ -44,15 +44,20 @@
 .cursor {
   display: inline-block;
   margin-left: 2px;
-  color: #33AEFF;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   font-weight: 300;
 }
+
 
 @keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -64,6 +69,7 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -136,6 +142,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
