@@ -28,17 +28,7 @@
   transform: translateX(-50%) scaleX(1);
 }
 
-#navToggle.active .hamburger-line:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
 
-#navToggle.active .hamburger-line:nth-child(2) {
-  opacity: 0;
-}
-
-#navToggle.active .hamburger-line:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
 
 /* Typewriter Cursor */
 .cursor {

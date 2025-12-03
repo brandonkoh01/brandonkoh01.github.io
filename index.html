@@ -108,38 +108,43 @@
 
                 <!-- Hamburger -->
                 <button id="navToggle"
-                    class="md:hidden w-10 h-10 rounded-lg bg-slate-100 flex flex-col items-center justify-center space-y-1.5 transition-all"
+                    class="group md:hidden w-10 h-10 rounded-lg bg-slate-100 flex flex-col items-center justify-center space-y-1.5 transition-all hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
                     aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger-line w-6 h-0.5 bg-slate-900 transition-all"></span>
-                    <span class="hamburger-line w-6 h-0.5 bg-slate-900 transition-all"></span>
-                    <span class="hamburger-line w-6 h-0.5 bg-slate-900 transition-all"></span>
+
+                    <span
+                        class="hamburger-line w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ease-in-out origin-center group-[.active]:translate-y-2 group-[.active]:rotate-45"></span>
+
+                    <span
+                        class="hamburger-line w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ease-in-out group-[.active]:opacity-0"></span>
+
+                    <span
+                        class="hamburger-line w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ease-in-out origin-center group-[.active]:-translate-y-2 group-[.active]:-rotate-45"></span>
                 </button>
             </div>
-        </div>
 
-        <!-- Mobile Navigation -->
-        <div id="navMenu" class="md:hidden hidden bg-white border-t border-slate-200">
-            <ul class="px-4 py-4 space-y-3">
-                <li><a href="#home"
-                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Home</a>
-                </li>
-                <li><a href="#about"
-                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">About</a>
-                </li>
-                <li><a href="#skills"
-                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Skills</a>
-                </li>
-                <li><a href="#projects"
-                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Projects</a>
-                </li>
-                <li><a href="#experience"
-                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Experience</a>
-                </li>
-                <li><a href="#contact"
-                        class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Contact</a>
-                </li>
-            </ul>
-        </div>
+            <!-- Mobile Navigation -->
+            <div id="navMenu" class="md:hidden hidden bg-white border-t border-slate-200">
+                <ul class="px-4 py-4 space-y-3">
+                    <li><a href="#home"
+                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Home</a>
+                    </li>
+                    <li><a href="#about"
+                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">About</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Skills</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Projects</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Experience</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Contact</a>
+                    </li>
+                </ul>
+            </div>
     </nav>
 
     <!-- Hero Section -->
