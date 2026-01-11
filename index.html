@@ -9,10 +9,10 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind Config -->
@@ -21,15 +21,37 @@
             theme: {
                 extend: {
                     colors: {
+                        // Core neutrals
+                        canvas: '#F4F7FB',
+                        surface: { 0: '#FFFFFF', 1: '#F8FAFC' },
+
+                        // Typography
+                        heading: '#0B1220',
+                        body: '#334155',
+                        muted: '#64748B',
+                        disabled: '#94A3B8',
+
+                        // Accents
+                        precision: '#2563EB',
+                        sheen: '#06B6D4',
+                        glint: '#D946EF',
+                        warmth: '#F59E0B',
+
+                        // Semantic
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        danger: '#EF4444',
+                        info: '#0EA5E9',
+
                         primary: {
                             50: '#eef2ff',
                             100: '#e0e7ff',
-                            500: '#0062E6',
+                            500: '#2563EB',
                             600: '#4f46e5',
                             700: '#4338ca',
                         },
                         secondary: {
-                            500: '#33AEFF',
+                            500: '#06B6D4',
                             600: '#db2777',
                         },
                         accent: {
@@ -38,7 +60,7 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Muli', 'system-ui', 'sans-serif'],
                     },
                     animation: {
                         'float': 'float 20s ease-in-out infinite',
@@ -74,78 +96,109 @@
 
 <body class="font-sans text-slate-900 bg-white transition-colors duration-300">
 
-    <!-- Navigation -->
-    <nav id="navbar"
-        class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <a href="#home" class="flex items-center space-x-2 text-xl font-bold text-slate-900">
-                    <span>Brandon's Portfolio</span>
-                </a>
+    <!-- Mobile Navigation - Hamburger Top Left (separate from desktop nav) -->
+    <div id="mobileNav" class="md:hidden fixed top-4 left-4 z-50">
+        <button id="navToggle"
+            class="group glass-navbar w-12 h-12 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all hover:bg-white/80 focus:outline-none focus:ring-2 focus:ring-sheen"
+            aria-label="Toggle navigation menu" aria-expanded="false">
+            <span
+                class="hamburger-line w-5 h-0.5 bg-heading rounded-full transition-all duration-300 ease-in-out origin-center group-[.active]:translate-y-2 group-[.active]:rotate-45"></span>
+            <span
+                class="hamburger-line w-5 h-0.5 bg-heading rounded-full transition-all duration-300 ease-in-out group-[.active]:opacity-0"></span>
+            <span
+                class="hamburger-line w-5 h-0.5 bg-heading rounded-full transition-all duration-300 ease-in-out origin-center group-[.active]:-translate-y-2 group-[.active]:-rotate-45"></span>
+        </button>
 
-                <!-- Desktop Navigation -->
-                <ul class="hidden md:flex items-center space-x-8">
-                    <li><a href="#home"
-                            class="nav-link active text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Home</a>
+        <!-- Mobile Menu Dropdown -->
+        <div id="navMenu" class="hidden mt-2">
+            <div class="glass-navbar rounded-2xl px-4 py-3 min-w-[200px]">
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#home"
+                            class="nav-link active block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200">
+                            Home
+                        </a>
                     </li>
-                    <li><a href="#about"
-                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">About</a>
+                    <li>
+                        <a href="#about"
+                            class="nav-link block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200">
+                            About
+                        </a>
                     </li>
-                    <li><a href="#experience"
-                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Experience</a>
+                    <li>
+                        <a href="#experience"
+                            class="nav-link block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200">
+                            Experience
+                        </a>
                     </li>
-                    <li><a href="#projects"
-                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Projects</a>
+                    <li>
+                        <a href="#projects"
+                            class="nav-link block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200">
+                            Projects
+                        </a>
                     </li>
-                    <li><a href="#skills"
-                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Skills</a>
+                    <li>
+                        <a href="#skills"
+                            class="nav-link block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200">
+                            Skills
+                        </a>
                     </li>
-                    <li><a href="#contact"
-                            class="nav-link text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Contact</a>
-                    </li>
-                </ul>
-
-                <!-- Hamburger -->
-                <button id="navToggle"
-                    class="group md:hidden w-10 h-10 rounded-lg bg-slate-100 flex flex-col items-center justify-center space-y-1.5 transition-all hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    aria-label="Toggle navigation menu" aria-expanded="false">
-
-                    <span
-                        class="hamburger-line w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ease-in-out origin-center group-[.active]:translate-y-2 group-[.active]:rotate-45"></span>
-
-                    <span
-                        class="hamburger-line w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ease-in-out group-[.active]:opacity-0"></span>
-
-                    <span
-                        class="hamburger-line w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ease-in-out origin-center group-[.active]:-translate-y-2 group-[.active]:-rotate-45"></span>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="navMenu" class="md:hidden hidden bg-white border-t border-slate-200">
-                <ul class="px-4 py-4 space-y-3">
-                    <li><a href="#home"
-                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Home</a>
-                    </li>
-                    <li><a href="#about"
-                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">About</a>
-                    </li>
-                    <li><a href="#skills"
-                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Skills</a>
-                    </li>
-                    <li><a href="#projects"
-                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Projects</a>
-                    </li>
-                    <li><a href="#experience"
-                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Experience</a>
-                    </li>
-                    <li><a href="#contact"
-                            class="block py-2 text-sm font-medium text-slate-600 hover:text-primary-500 transition-colors">Contact</a>
+                    <li>
+                        <a href="#contact"
+                            class="nav-link block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200">
+                            Contact
+                        </a>
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+    <!-- Desktop Navigation - Centered Pill -->
+    <nav id="navbar" class="hidden md:block fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
+        <div class="glass-navbar relative rounded-full px-2 py-2">
+            <ul class="flex items-center gap-1">
+                <li>
+                    <a href="#home"
+                        class="nav-link active relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#about"
+                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#experience"
+                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
+                        Experience
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects"
+                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills"
+                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
+                        Skills
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact"
+                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
+
+
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
@@ -165,7 +218,8 @@
                         </h2>
                     </div>
                     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-up">
-                        A Software Engineering undergraduate with experience in full-stack and mobile application development.
+                        A Software Engineering undergraduate with experience in full-stack and mobile application
+                        development.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up">
                         <a href="#projects"
@@ -250,10 +304,11 @@
                             </div>
                             <div class="pl-8"><span class="text-green-400">'React'</span><span
                                     class="text-slate-500">,</span> <span class="text-green-400">'Vue.js'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Expo'</span><span class="text-slate-500">,</span> 
-                                    <span class="text-green-400">'Spring Boot'</span><span class="text-slate-500">,</span> 
-                                    <span class="text-green-400">'Bootstrap'</span><span class="text-slate-500">,</span> 
-                                    <span class="text-green-400">'Tailwind CSS'</span>
+                                    class="text-slate-500">,</span> <span class="text-green-400">'Expo'</span><span
+                                    class="text-slate-500">,</span>
+                                <span class="text-green-400">'Spring Boot'</span><span class="text-slate-500">,</span>
+                                <span class="text-green-400">'Bootstrap'</span><span class="text-slate-500">,</span>
+                                <span class="text-green-400">'Tailwind CSS'</span>
                             </div>
                             <div class="pl-4"><span class="text-yellow-500">]</span><span
                                     class="text-slate-500">,</span></div>

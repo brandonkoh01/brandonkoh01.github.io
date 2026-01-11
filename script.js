@@ -30,6 +30,7 @@ const throttle = (func, limit) => {
 class Navigation {
   constructor() {
     this.navbar = $('#navbar');
+    this.mobileNav = $('#mobileNav');
     this.navToggle = $('#navToggle');
     this.navMenu = $('#navMenu');
     this.navLinks = $$('.nav-link');
@@ -68,7 +69,7 @@ class Navigation {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!this.navbar.contains(e.target) && !this.navMenu.classList.contains('hidden')) {
+      if (this.mobileNav && !this.mobileNav.contains(e.target) && !this.navMenu.classList.contains('hidden')) {
         this.closeMenu();
       }
     });
@@ -106,26 +107,55 @@ class Navigation {
   }
 
   setupActiveLink() {
-    const handleScroll = throttle(() => {
+    let ticking = false;
+
+    const updateActiveLink = () => {
       const scrollY = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      let currentSection = null;
 
-      this.sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
+      // Check if user has scrolled to the bottom of the page
+      const isAtBottom = scrollY + windowHeight >= documentHeight - 50;
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          this.navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }, 100);
+      if (isAtBottom && this.sections.length > 0) {
+        // If at bottom, activate the last section
+        currentSection = this.sections[this.sections.length - 1].getAttribute('id');
+      } else {
+        // Find the current section based on scroll position
+        this.sections.forEach(section => {
+          const sectionTop = section.offsetTop - 150;
+          const sectionBottom = sectionTop + section.offsetHeight;
 
-    window.addEventListener('scroll', handleScroll);
+          if (scrollY >= sectionTop && scrollY < sectionBottom) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+      }
+
+      // Update active class only if section changed
+      if (currentSection) {
+        this.navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateActiveLink);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial call to set active state on page load
+    updateActiveLink();
   }
 }
 
