@@ -3,18 +3,6 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
-const debounce = (func, wait) => {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
-
 const throttle = (func, limit) => {
   let inThrottle;
   return function (...args) {
@@ -30,9 +18,6 @@ const throttle = (func, limit) => {
 class Navigation {
   constructor() {
     this.navbar = $('#navbar');
-    this.mobileNav = $('#mobileNav');
-    this.navToggle = $('#navToggle');
-    this.navMenu = $('#navMenu');
     this.navLinks = $$('.nav-link');
     this.sections = $$('section[id]');
 
@@ -41,7 +26,6 @@ class Navigation {
 
   init() {
     this.setupScrollEffect();
-    this.setupMobileMenu();
     this.setupSmoothScroll();
     this.setupActiveLink();
   }
@@ -56,36 +40,6 @@ class Navigation {
     }, 100);
 
     window.addEventListener('scroll', handleScroll);
-  }
-
-  setupMobileMenu() {
-    this.navToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      this.navToggle.classList.toggle('active');
-      this.navMenu.classList.toggle('hidden');
-      const isExpanded = this.navToggle.getAttribute('aria-expanded') === 'true';
-      this.navToggle.setAttribute('aria-expanded', !isExpanded);
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (this.mobileNav && !this.mobileNav.contains(e.target) && !this.navMenu.classList.contains('hidden')) {
-        this.closeMenu();
-      }
-    });
-
-    // Close menu when clicking a link
-    this.navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        this.closeMenu();
-      });
-    });
-  }
-
-  closeMenu() {
-    this.navToggle.classList.remove('active');
-    this.navMenu.classList.add('hidden');
-    this.navToggle.setAttribute('aria-expanded', 'false');
   }
 
   setupSmoothScroll() {
@@ -351,26 +305,6 @@ class ParallaxEffects {
 }
 
 
-class KeyboardNavigation {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    document.addEventListener('keydown', (e) => {
-      // ESC key closes mobile menu
-      if (e.key === 'Escape') {
-        const navMenu = $('#navMenu');
-        const navToggle = $('#navToggle');
-        if (!navMenu.classList.contains('hidden')) {
-          navToggle.classList.remove('active');
-          navMenu.classList.add('hidden');
-          navToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  }
-}
 
 
 class PerformanceOptimiser {
@@ -429,7 +363,6 @@ class App {
     new ProjectsFilter();
 
     new ParallaxEffects();
-    new KeyboardNavigation();
 
     new PerformanceOptimiser();
 
