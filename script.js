@@ -118,8 +118,10 @@ class TypewriterEffect {
     this.typingText = $('.hero-subtitle');
     this.titles = [
       'a Software Engineer.',
+      'a Mobile Developer.',
+      'an AI enthusiast.',
+      'a team player.',
       'a problem solver.',
-      'a team player.'
     ];
     this.titleIndex = 0;
     this.charIndex = 0;

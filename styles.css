@@ -113,10 +113,6 @@
   transition-duration: 150ms;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
 .glass-card img {
   object-fit: cover;
   object-position: center;
