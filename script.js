@@ -87,7 +87,6 @@ class Navigation {
         });
       }
 
-      // Update active class only if section changed
       if (currentSection) {
         this.navLinks.forEach(link => {
           link.classList.remove('active');
@@ -126,15 +125,25 @@ class TypewriterEffect {
     this.titleIndex = 0;
     this.charIndex = 0;
     this.isDeleting = false;
-    this.typingSpeed = 100;
 
     if (this.typingText) {
       this.init();
     }
   }
 
+  getTypingDelay() {
+    const baseDelay = 80;
+    const variance = 40;
+    return baseDelay + Math.random() * variance;
+  }
+
+  getDeletingDelay() {
+    const baseDelay = 35;
+    const variance = 20;
+    return baseDelay + Math.random() * variance;
+  }
+
   init() {
-    // Add cursor element if it doesn't exist
     const cursor = this.typingText.querySelector('.cursor');
     if (!cursor) {
       const cursorSpan = document.createElement('span');
@@ -143,32 +152,35 @@ class TypewriterEffect {
       this.typingText.appendChild(cursorSpan);
     }
 
-    // Start typing after a short delay
-    setTimeout(() => this.typeText(), 1000);
+    setTimeout(() => this.typeText(), 800);
   }
 
   typeText() {
     const currentTitle = this.titles[this.titleIndex];
     const cursor = this.typingText.querySelector('.cursor');
+    let delay;
 
     if (!this.isDeleting) {
       // Typing
       const textNode = this.typingText.firstChild;
+      const newText = currentTitle.substring(0, this.charIndex + 1);
+
       if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-        textNode.textContent = currentTitle.substring(0, this.charIndex + 1);
+        textNode.textContent = newText;
       } else {
-        this.typingText.insertBefore(
-          document.createTextNode(currentTitle.substring(0, this.charIndex + 1)),
-          cursor
-        );
+        this.typingText.insertBefore(document.createTextNode(newText), cursor);
       }
 
       this.charIndex++;
-      this.typingSpeed = 100;
+      delay = this.getTypingDelay();
+
+      const lastChar = newText.slice(-1);
+      if ([',', '.', '!', '?'].includes(lastChar)) {
+        delay += 150;
+      }
 
       if (this.charIndex === currentTitle.length) {
-        // Pause at end
-        this.typingSpeed = 2000;
+        delay = 2500; 
         this.isDeleting = true;
       }
     } else {
@@ -179,16 +191,16 @@ class TypewriterEffect {
       }
 
       this.charIndex--;
-      this.typingSpeed = 50;
+      delay = this.getDeletingDelay();
 
-      if (this.charIndex === 1) {
+      if (this.charIndex === 0) {
         this.isDeleting = false;
         this.titleIndex = (this.titleIndex + 1) % this.titles.length;
-        this.typingSpeed = 500;
+        delay = 400; 
       }
     }
 
-    setTimeout(() => this.typeText(), this.typingSpeed);
+    setTimeout(() => this.typeText(), delay);
   }
 }
 
