@@ -63,23 +63,6 @@
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
                     },
-                    animation: {
-                        'float': 'float 20s ease-in-out infinite',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'pulse-slow': 'pulse 3s ease-in-out infinite',
-                        'blink': 'blink 1s step-end infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-                            '33%': { transform: 'translate(50px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-50px, 50px) scale(0.9)' },
-                        },
-                        blink: {
-                            '0%, 100%': { opacity: '1' },
-                            '50%': { opacity: '0' },
-                        }
-                    },
                     backdropBlur: {
                         xs: '2px',
                     }
@@ -151,17 +134,17 @@
 
     <!-- Background Section -->
     <section id="about"
-        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        class="reveal-on-scroll flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
         <div
-            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            class="section-label mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
             Background
         </div>
         <div
-            class="w-full max-w-[650px] space-y-6 pl-6 text-sm font-light leading-7 text-slate-600 sm:text-base md:pl-0">
+            class="section-content w-full max-w-[650px] space-y-6 pl-6 text-sm font-light leading-7 text-slate-600 sm:text-base md:pl-0">
             <p>
                 I'm currently a Software Engineering undergraduate at
                 <a href="https://www.smu.edu.sg/" target="_blank" rel="noopener noreferrer"
-                    class="font-semibold text-slate-800 underline decoration-slate-300 underline-offset-4 transition hover:decoration-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                    class="font-semibold text-slate-800 underline decoration-slate-300 underline-offset-4 transition-[color,text-decoration-color] duration-300 ease-out hover:text-slate-950 hover:decoration-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
                     Singapore Management University</a>, where I'm passionate about developing robust and scalable
                 solutions that genuinely improve how people live and work.
 
@@ -169,7 +152,7 @@
             <p>
                 Most recently, I worked at
                 <a href="https://betteragesolutions.com/" target="_blank" rel="noopener noreferrer"
-                    class="font-semibold text-slate-800 underline decoration-slate-300 underline-offset-4 transition hover:decoration-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                    class="font-semibold text-slate-800 underline decoration-slate-300 underline-offset-4 transition-[color,text-decoration-color] duration-300 ease-out hover:text-slate-950 hover:decoration-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
                     Better Age Solutions</a> on Chariots Mobile, a last-mile medicine delivery app used in Singapore's
                 public healthcare logistics operations.
             </p>
@@ -183,14 +166,14 @@
 
     <!-- Skills Section -->
     <section id="skills"
-        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        class="reveal-on-scroll flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
         <div
-            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            class="section-label mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
             Skills
         </div>
-        <div class="w-full max-w-[650px] pl-6 md:pl-0">
+        <div class="section-content w-full max-w-[650px] pl-6 md:pl-0">
             <div class="grid grid-cols-2 gap-x-8 gap-y-10 text-sm font-light leading-6 text-slate-600 sm:grid-cols-4">
-                <div>
+                <div class="skill-group">
                     <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Languages</h3>
                     <ul class="space-y-1">
                         <li>JavaScript</li>
@@ -202,7 +185,7 @@
                         <li>PHP</li>
                     </ul>
                 </div>
-                <div>
+                <div class="skill-group">
                     <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Frameworks</h3>
                     <ul class="space-y-1">
                         <li>React</li>
@@ -214,7 +197,7 @@
                         <li>Tailwind CSS</li>
                     </ul>
                 </div>
-                <div>
+                <div class="skill-group">
                     <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Tools</h3>
                     <ul class="space-y-1">
                         <li>Git</li>
@@ -225,7 +208,7 @@
                         <li>Figma</li>
                     </ul>
                 </div>
-                <div>
+                <div class="skill-group">
                     <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Databases</h3>
                     <ul class="space-y-1">
                         <li>Redis</li>
@@ -241,18 +224,30 @@
 
     <!-- Experience Section -->
     <section id="experience"
-        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        class="reveal-on-scroll flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
         <div
-            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            class="section-label mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
             Experience
         </div>
-        <div class="w-full max-w-[650px] pl-6 md:pl-0">
+        <div class="section-content w-full max-w-[650px] pl-6 md:pl-0">
             <div class="space-y-8 text-sm font-light leading-6 text-slate-600">
-                <article>
+                <article class="timeline-item">
+                    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 class="font-bold text-slate-900">
+                            <a href="https://www.csit.gov.sg/" target="_blank" rel="noopener noreferrer"
+                                class="transition-colors duration-300 hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                               CSIT
+                            </a>
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 sm:text-right">May 2026 - Jul 2026</p>
+                    </div>
+                    <p>Software Engineer</p>
+                </article>
+                <article class="timeline-item">
                     <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                         <h3 class="font-bold text-slate-900">
                             <a href="https://betteragesolutions.com/" target="_blank" rel="noopener noreferrer"
-                                class="transition hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                                class="transition-colors duration-300 hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
                                 Better Age Solutions
                             </a>
                         </h3>
@@ -260,11 +255,11 @@
                     </div>
                     <p>Software Engineer</p>
                 </article>
-                <article>
+                <article class="timeline-item">
                     <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                         <h3 class="font-bold text-slate-900">
                             <a href="https://www.smu.edu.sg/" target="_blank" rel="noopener noreferrer"
-                                class="transition hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                                class="transition-colors duration-300 hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
                                 Singapore Management University
                             </a>
                         </h3>
@@ -272,11 +267,11 @@
                     </div>
                     <p>Teaching Assistant</p>
                 </article>
-                <article>
+                <article class="timeline-item">
                     <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                         <h3 class="font-bold text-slate-900">
                             <a href="https://betteragesolutions.com/" target="_blank" rel="noopener noreferrer"
-                                class="transition hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                                class="transition-colors duration-300 hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
                                 Better Age Solutions
                             </a>
                         </h3>
@@ -290,13 +285,13 @@
 
     <!-- Project Section -->
     <section id="projects"
-        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        class="reveal-on-scroll flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
         <div
-            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            class="section-label mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
             Project
         </div>
-        <div class="w-full max-w-[650px] space-y-12 pl-6 md:pl-0">
-            <article class="max-w-[600px]">
+        <div class="section-content w-full max-w-[650px] space-y-12 pl-6 md:pl-0">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
@@ -321,7 +316,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
@@ -346,7 +341,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
@@ -371,7 +366,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
@@ -394,7 +389,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://github.com/brandonkoh01/earthly" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
@@ -421,7 +416,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://github.com/JericToh1/CS102-Smart-Attendance-System" target="_blank"
                         rel="noopener noreferrer"
@@ -446,7 +441,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://plotandpedal.web.app/" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
@@ -470,7 +465,7 @@
                 </div>
             </article>
 
-            <article class="max-w-[600px]">
+            <article class="project-item max-w-[600px]">
                 <h3 class="mb-2 text-base font-bold text-slate-900">
                     <a href="https://github.com/brandonkoh01/Beacon" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
