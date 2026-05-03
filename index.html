@@ -12,7 +12,8 @@
     <!-- Google Fonts - Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
         rel="stylesheet">
 
     <!-- Tailwind Config -->
@@ -96,1049 +97,413 @@
 
 <body class="font-sans text-slate-900 bg-white transition-colors duration-300">
 
-
-    <!-- Desktop Navigation - Centered Pill -->
-    <nav id="navbar" class="hidden md:block fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
-        <div class="glass-navbar relative rounded-full px-2 py-2">
-            <ul class="flex items-center gap-1">
-                <li>
-                    <a href="#home"
-                        class="nav-link active relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#about"
-                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
-                        About
-                    </a>
-                </li>
-                <li>
-                    <a href="#experience"
-                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
-                        Experience
-                    </a>
-                </li>
-                <li>
-                    <a href="#projects"
-                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
-                        Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills"
-                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
-                        Skills
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact"
-                        class="nav-link relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Hero Text -->
-                <div class="text-center lg:text-left space-y-6">
-                    <p class="text-lg text-slate-600 animate-fade-up">Hello👋, I'm</p>
-                    <h1
-                        class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent animate-fade-up pb-2">
-                        Brandon,
-                    </h1>
-                    <div class="animate-fade-up">
-                        <h2
-                            class="hero-subtitle text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 inline-block">
-                            <span class="cursor animate-blink">|</span>
-                        </h2>
-                    </div>
-                    <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-up">
-                        A Software Engineering undergraduate with experience in full-stack and mobile application
-                        development.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up">
-                        <a href="#projects"
-                            class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                            View My Work
-                            <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                        <a href="#contact"
-                            class="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-slate-300 text-slate-900 font-semibold hover:border-secondary-500 hover:text-secondary-500 transition-all duration-300">
-                            Get In Touch
-                        </a>
-                    </div>
-                    <div class="flex gap-4 justify-center lg:justify-start animate-fade-up">
-                        <a href="https://github.com/brandonkoh01" target="_blank" rel="noopener noreferrer"
-                            class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
-                            aria-label="GitHub profile">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/brandonkohws" target="_blank" rel="noopener noreferrer"
-                            class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
-                            aria-label="LinkedIn profile">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="mailto:brandonkoh01@gmail.com"
-                            class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
-                            aria-label="Email contact">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Code -->
-                <div class="hidden lg:block animate-fade-left">
-                    <div class="glass-card rounded-2xl p-6 shadow-2xl">
-                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-200">
-                            <div class="flex space-x-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                                <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                            </div>
-                            <span class="text-xs text-slate-500 font-mono">developer.js</span>
-                        </div>
-                        <div class="font-mono text-sm space-y-1">
-                            <div><span class="text-purple-500">const</span> <span class="text-red-400">developer</span>
-                                <span class="text-slate-500">=</span> <span class="text-yellow-500">{</span>
-                            </div>
-                            <div class="pl-4"><span class="text-cyan-400">name</span><span
-                                    class="text-slate-500">:</span> <span class="text-green-400">'Brandon
-                                    Koh'</span><span class="text-slate-500">,</span></div>
-                            <div class="pl-4"><span class="text-cyan-400">role</span><span
-                                    class="text-slate-500">:</span> <span class="text-green-400">'Software
-                                    Engineer'</span><span class="text-slate-500">,</span></div>
-                            <div class="pl-4"><span class="text-cyan-400">university</span><span
-                                    class="text-slate-500">:</span> <span class="text-green-400">'Singapore Management
-                                    University'</span><span class="text-slate-500">,</span></div>
-                            <div class="pl-4"><span class="text-cyan-400">experience</span><span
-                                    class="text-slate-500">:</span> <span class="text-green-400">'4+ years'</span><span
-                                    class="text-slate-500">,</span></div>
-                            <div class="pl-4"><span class="text-cyan-400">skills</span><span
-                                    class="text-slate-500">:</span> <span class="text-yellow-500">[</span></div>
-                            <div class="pl-8"><span class="text-green-400">'Java'</span><span
-                                    class="text-slate-500">,</span> <span
-                                    class="text-green-400">'JavaScript'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'TypeScript'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'Python'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'C#'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'PHP'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'SQL'</span><span class="text-slate-500">,</span>
-                            </div>
-                            <div class="pl-8"><span class="text-green-400">'React'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Vue.js'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Expo'</span><span
-                                    class="text-slate-500">,</span>
-                                <span class="text-green-400">'Spring Boot'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'Bootstrap'</span><span class="text-slate-500">,</span>
-                                <span class="text-green-400">'Tailwind CSS'</span>
-                            </div>
-                            <div class="pl-4"><span class="text-yellow-500">]</span><span
-                                    class="text-slate-500">,</span></div>
-                            <div class="pl-4"><span class="text-cyan-400">hobbies</span><span
-                                    class="text-slate-500">:</span> <span class="text-yellow-500">[</span></div>
-                            <div class="pl-8"><span class="text-green-400">'Running'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Reading'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Music'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Fashion'</span><span
-                                    class="text-slate-500">,</span> <span class="text-green-400">'Films'</span>
-                            </div>
-                            <div class="pl-4"><span class="text-yellow-500">]</span></div>
-                            <div class="pl-1"><span class="text-yellow-500">}</span><span
-                                    class="text-slate-500">;</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-slate-50">
+    <section id="home" class="relative min-h-screen pt-24 pb-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">About Me</h2>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-12 items-start">
-                <!-- About Text -->
-                <div class="lg:col-span-2">
-                    <div class="glass-card rounded-2xl p-8 space-y-6">
-                        <h3 class="text-2xl font-bold">Hi👋, I'm Brandon.</h3>
-                        <p class="text-slate-700 leading-relaxed">
-                            I'm currently a Software Engineering sophomore in Singapore Management University, where I'm
-                            passionate about developing robust and scalable solutions that don't just automate tasks,
-                            but genuinely improve
-                            how people live and work.
-                        </p>
-                        <p class="text-slate-700 leading-relaxed">
-                            I most recently worked at Better Age Solutions where I helped redevelop Chariots
-                            Mobile, a last-mile medicine delivery mobile app that has 50+ daily users and processed over
-                            a
-                            million parcels for Singapore’s public healthcare institutions since its launch. I
-                            collaborated
-                            with 4 engineers to build the app
-                            over a period of one year on a TypeScript, Expo, SQLite and
-                            MongoDB stack.
-                        </p>
-                        <p class="text-slate-700 leading-relaxed">
-                            Outside of work, I love running, reading non-fiction, watching rom-coms, listening to R&B,
-                            and all things fashion.
-                        </p>
-                    </div>
+            <header class="max-w-4xl min-h-[60vh] md:min-h-[70vh] flex flex-col justify-between">
+                <h1 class="text-3xl sm:text-4xl font-light text-slate-700">
+                    Hello <span class="inline-block" aria-hidden="true">👋</span>
+                </h1>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 leading-tight">
+                    I'm <span class="font-semibold text-slate-900">Brandon</span>, a software engineering
+                    undergraduate focused on building full-stack and mobile experiences
+                    <span class="inline-block" aria-hidden="true">🧑‍💻</span>
+                </h2>
+                <div class="space-y-3">
+                    <ul class="flex flex-wrap items-center gap-6 text-base sm:text-lg text-slate-700">
+                        <li>
+                            <a href="https://github.com/brandonkoh01" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 border-b-2 border-slate-300 pb-1 transition-colors hover:border-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/brandonkohws" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 border-b-2 border-slate-300 pb-1 transition-colors hover:border-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:brandonkoh01@gmail.com"
+                                class="inline-flex items-center gap-2 border-b-2 border-slate-300 pb-1 transition-colors hover:border-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                Email
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <!-- Education Card -->
-                <div class="glass-card rounded-2xl p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Education</h3>
-                    <p
-                        class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-semibold">
-                        Singapore Management University</p>
-                    <p class="text-slate-700 text-sm">BSc (Software Engineering)</p>
-                    <p class="text-slate-500 text-xs mt-2">Aug 2024 - May 2028</p>
-                    <div class="mt-4 pt-4 border-t border-slate-300">
-                        <p class="text-sm font-semibold text-slate-900 mb-2">Achievements:</p>
-                        <p class="text-slate-700 text-sm">Dean's List AY24/25</p>
-                        <p class="text-slate-700 text-sm">Build for Impact Hackathon 2026 | 3rd Place</p>
-                        <p class="text-slate-700 text-sm">Ellipsis Tech Series Hackathon 2025 | Top 10 Finalist</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-slate-300">
-                        <p class="text-sm font-semibold text-slate-900 mb-2">Relevant Coursework:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">Algorithms</span>
-                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">OOP</span>
-                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">Web Dev</span>
-                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">OS &
-                                Networking</span>
-                            <span class="px-2 py-1 bg-slate-100 text-xs rounded-full text-slate-700">Data
-                                Management</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </header>
         </div>
     </section>
 
+    <!-- Background Section -->
+    <section id="about"
+        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        <div
+            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            Background
+        </div>
+        <div
+            class="w-full max-w-[650px] space-y-6 pl-6 text-sm font-light leading-7 text-slate-600 sm:text-base md:pl-0">
+            <p>
+                I'm currently a Software Engineering undergraduate at
+                <a href="https://www.smu.edu.sg/" target="_blank" rel="noopener noreferrer"
+                    class="font-semibold text-slate-800 underline decoration-slate-300 underline-offset-4 transition hover:decoration-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                    Singapore Management University</a>, where I'm passionate about developing robust and scalable
+                solutions that genuinely improve how people live and work.
+
+            </p>
+            <p>
+                Most recently, I worked at
+                <a href="https://betteragesolutions.com/" target="_blank" rel="noopener noreferrer"
+                    class="font-semibold text-slate-800 underline decoration-slate-300 underline-offset-4 transition hover:decoration-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                    Better Age Solutions</a> on Chariots Mobile, a last-mile medicine delivery app used in Singapore's
+                public healthcare logistics operations.
+            </p>
+            <p>
+                <strong class="font-semibold text-slate-900">When I'm not coding</strong>, I'm
+                usually running, reading non-fiction, watching rom-coms, listening to R&amp;B, or keeping up with
+                fashion.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills"
+        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        <div
+            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            Skills
+        </div>
+        <div class="w-full max-w-[650px] pl-6 md:pl-0">
+            <div class="grid grid-cols-2 gap-x-8 gap-y-10 text-sm font-light leading-6 text-slate-600 sm:grid-cols-4">
+                <div>
+                    <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Languages</h3>
+                    <ul class="space-y-1">
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C#</li>
+                        <li>SQL</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Frameworks</h3>
+                    <ul class="space-y-1">
+                        <li>React</li>
+                        <li>Vue.js</li>
+                        <li>Spring Boot</li>
+                        <li>Expo</li>
+                        <li>ASP.NET Core</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Tools</h3>
+                    <ul class="space-y-1">
+                        <li>Git</li>
+                        <li>Microsoft Azure</li>
+                        <li>Docker</li>
+                        <li>Kong</li>
+                        <li>Firebase</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3 text-xs font-bold uppercase tracking-wide text-slate-900">Databases</h3>
+                    <ul class="space-y-1">
+                        <li>Redis</li>
+                        <li>MongoDB</li>
+                        <li>SQLite</li>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-canvas">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl sm:text-5xl font-bold text-slate-900">Work Experience</h2>
-            </div>
-
-            <div class="max-w-5xl mx-auto relative">
-                <!-- Timeline Line (Desktop only) -->
-                <div class="absolute left-1/2 top-0 bottom-0 w-px bg-slate-200 hidden md:block"></div>
-
-                <div class="space-y-12 md:space-y-24">
-                    <!-- Experience 1 - Left -->
-                    <div class="relative">
-                        <!-- Timeline Dot -->
-                        <div
-                            class="absolute left-1/2 top-8 w-3 h-3 bg-primary-500 rounded-full transform -translate-x-1/2 hidden md:block">
-                        </div>
-
-                        <div class="md:grid md:grid-cols-2 md:gap-16">
-                            <div class="md:pr-8">
-                                <div class="glass-card rounded-2xl p-8">
-                                    <span
-                                        class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-sm font-medium mb-4">
-                                        June 2024 - Jan 2026
-                                    </span>
-                                    <h3 class="text-xl font-bold text-slate-900 mb-1">Software Engineer</h3>
-                                    <h4
-                                        class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-semibold mb-4">
-                                        Better Age Solutions Pte. Ltd.
-                                    </h4>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Collaborated with 4 engineers to rebuild a last-mile medicine delivery app
-                                        serving
-                                        Singapore's public healthcare
-                                        system. I also built a route optimisation API and designed an analytics
-                                        dashboard
-                                        with dynamic data visualisation to enhance operational efficiency for logistics
-                                        providers.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Java</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">TypeScript</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Spring
-                                            Boot</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Expo</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">SQLite</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">MongoDB</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Tailwind
-                                            CSS</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hidden md:block"></div>
-                        </div>
+    <section id="experience"
+        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        <div
+            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            Experience
+        </div>
+        <div class="w-full max-w-[650px] pl-6 md:pl-0">
+            <div class="space-y-8 text-sm font-light leading-6 text-slate-600">
+                <article>
+                    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 class="font-bold text-slate-900">
+                            <a href="https://betteragesolutions.com/" target="_blank" rel="noopener noreferrer"
+                                class="transition hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                                Better Age Solutions
+                            </a>
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 sm:text-right">June 2024 - Jan 2026</p>
                     </div>
-
-                    <!-- Experience 2 - Right -->
-                    <div class="relative">
-                        <!-- Timeline Dot -->
-                        <div
-                            class="absolute left-1/2 top-8 w-3 h-3 bg-primary-500 rounded-full transform -translate-x-1/2 hidden md:block">
-                        </div>
-
-                        <div class="md:grid md:grid-cols-2 md:gap-16">
-                            <div class="hidden md:block"></div>
-                            <div class="md:pl-8">
-                                <div class="glass-card rounded-2xl p-8">
-                                    <span
-                                        class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-sm font-medium mb-4">
-                                        Aug 2025 - Nov 2025
-                                    </span>
-                                    <h3 class="text-xl font-bold text-slate-900 mb-1">Teaching Assistant</h3>
-                                    <h4
-                                        class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-semibold mb-4">
-                                        Singapore Management University
-                                    </h4>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        TA for Computational Thinking and Programming, as well as Writing and
-                                        Reasoning. Facilitated weekly lessons for first-year undergraduates and provided
-                                        feedback on their work.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Python</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Communication</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Mentoring</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <p>Software Engineer</p>
+                </article>
+                <article>
+                    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 class="font-bold text-slate-900">
+                            <a href="https://www.smu.edu.sg/" target="_blank" rel="noopener noreferrer"
+                                class="transition hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                                Singapore Management University
+                            </a>
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 sm:text-right">Aug 2025 - Nov 2025</p>
                     </div>
-
-                    <!-- Experience 3 - Left -->
-                    <div class="relative">
-                        <!-- Timeline Dot -->
-                        <div
-                            class="absolute left-1/2 top-8 w-3 h-3 bg-primary-500 rounded-full transform -translate-x-1/2 hidden md:block">
-                        </div>
-
-                        <div class="md:grid md:grid-cols-2 md:gap-16">
-                            <div class="md:pr-8">
-                                <div class="glass-card rounded-2xl p-8">
-                                    <span
-                                        class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-sm font-medium mb-4">
-                                        Feb 2022 - May 2022
-                                    </span>
-                                    <h3 class="text-xl font-bold text-slate-900 mb-1">Software Engineer Intern</h3>
-                                    <h4
-                                        class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent font-semibold mb-4">
-                                        Better Age Solutions Pte. Ltd.
-                                    </h4>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Developed an NFC-based authenticity verification mobile app for a shipping
-                                        company to authenticate thousands of bills of
-                                        lading, significantly reducing the likelihood of document tampering and fraud in
-                                        maritime logistics.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">C#</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">ASP.NET
-                                            Core</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Xamarin</span>
-                                        <span
-                                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">MongoDB</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hidden md:block"></div>
-                        </div>
+                    <p>Teaching Assistant</p>
+                </article>
+                <article>
+                    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 class="font-bold text-slate-900">
+                            <a href="https://betteragesolutions.com/" target="_blank" rel="noopener noreferrer"
+                                class="transition hover:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                                Better Age Solutions
+                            </a>
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 sm:text-right">Feb 2022 - May 2022</p>
                     </div>
-                </div>
+                    <p>Software Engineer Intern</p>
+                </article>
             </div>
         </div>
     </section>
 
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Projects</h2>
-            </div>
-
-            <!-- Project Filter -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button
-                    class="filter-btn active px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-primary-500 to-secondary-500 text-white transition-all duration-300"
-                    data-filter="all">All Projects</button>
-                <button
-                    class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-slate-200 text-slate-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 hover:text-white transition-all duration-300"
-                    data-filter="mobile">Mobile</button>
-                <button
-                    class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-slate-200 text-slate-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 hover:text-white transition-all duration-300"
-                    data-filter="web">Web</button>
-                <button
-                    class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-slate-200 text-slate-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 hover:text-white transition-all duration-300"
-                    data-filter="api">API</button>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1: Chariots Mobile -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="mobile">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                        <img class="h-full w-full" src="portfolioImages/Chariots.png">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Chariots Mobile</h3>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            Redeveloped a last-mile delivery mobile app serving Singapore's
-                            public healthcare institutions for time-critical medicine delivery.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">TypeScript</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">Expo</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">SQLite</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
-                                    <path
-                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
-                                    </path>
-                                </svg>
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Route Optimisation API -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="api">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <circle cx="12" cy="10" r="3" />
-                            <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                        </svg>
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Route Optimisation API</h3>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            Built a route optimisation API for logistics providers delivering medicine for Singapore's
-                            public healthcare institutions, reducing delivery
-                            times and operational costs.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Java</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Spring
-                                Boot</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Jsprit</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">OSRM</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
-                                    <path
-                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
-                                    </path>
-                                </svg>
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: Analytics Dashboard -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="web">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg>
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Analytics Dashboard</h3>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            Designed an interactive analytics dashboard with route visualisation, statistics, and
-                            data filtering to provide operational insights for logistics providers.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">HTML</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">JavaScript</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Leaflet</span>
-                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Tailwind
-                                CSS</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
-                                    <path
-                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
-                                    </path>
-                                </svg>
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: SecureTag NFC App -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="mobile">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-yellow-500 to-orange-400 flex items-center justify-center">
-                        <img class="h-full w-full" src="portfolioImages/SecureTag.png">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">SecureTag</h3>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            NFC-based authenticity verification mobile app deployed in maritime logistics to reduce the
-                            likelihood of
-                            bills of lading tampering.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">C#</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">ASP.NET
-                                Core</span>
-                            <span
-                                class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">Xamarin</span>
-                            <span
-                                class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">MongoDB</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://betteragesolutions.com/#solutions"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
-                                    <path
-                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
-                                    </path>
-                                </svg>
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5: Earthly -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="web">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center">
-                        <img class="h-full w-full" src="portfolioImages/earthly.png">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://github.com/brandonkoh01/earthly"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center gap-2 mb-2">
-                            <h3 class="text-xl font-bold text-slate-900">earthly</h3>
-                        </div>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            A web app incentivising eco-friendly habits through habit tracking,
-                            challenges, leaderboards, and rewards for Ellipsis Tech Series Hackathon 2025.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">HTML</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">CSS</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">JavaScript</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">PHP</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">MySQL</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Bootstrap</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://github.com/brandonkoh01/earthly"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <!-- Project 6: Smart Attendance System -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="web">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                        <img class="h-full w-full" src="portfolioImages/SAS.png">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://github.com/JericToh1/CS102-Smart-Attendance-System"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Smart Attendance System</h3>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            A full-stack smart attendance web application that enables real-time attendance marking
-                            with facial recognition for use in Singapore Management University.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">HTML</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">Java</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">Spring
-                                Boot</span>
-                            <span
-                                class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">JavaScript</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">Tailwind
-                                CSS</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">OpenCV</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">MySQL</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://github.com/JericToh1/CS102-Smart-Attendance-System"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <!-- Project 7: Plot & Pedal -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="web">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center">
-                        <img class="h-full w-full" src="portfolioImages/pnp.png">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://plotandpedal.web.app/"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center gap-2 mb-2">
-                            <h3 class="text-xl font-bold text-slate-900">Plot & Pedal</h3>
-                        </div>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            An AI-powered web application that helps you discover, plan, and share cycling routes in
-                            Singapore
-                            with ease.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">HTML</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">CSS</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Bootstrap</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Vue.js</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">PostgreSQL</span>
-                            <span
-                                class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Gemini</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://plotandpedal.web.app/"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path d="M11 11h2v6h-2zM11 7h2v2h-2z"></path>
-                                    <path
-                                        d="M12 22c5.51 0 10-4.49 10-10S17.51 2 12 2 2 6.49 2 12s4.49 10 10 10m0-18c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8">
-                                    </path>
-                                </svg>
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <!-- Project 8: Beacon -->
-                <article
-                    class="project-card glass-card rounded-2xl overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-all duration-300"
-                    data-category="web">
-                    <div
-                        class="relative h-48 overflow-hidden bg-gradient-to-br from-yellow-500 to-orange-400 flex items-center justify-center">
-                        <img class="h-full w-full" src="portfolioImages/Beacon.png">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://github.com/brandonkoh01/Beacon"
-                                class="w-14 h-14 rounded-full bg-white text-primary-500 flex items-center justify-center transform scale-75 hover:scale-100 transition-transform">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    <polyline points="15 3 21 3 21 9" />
-                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Beacon</h3>
-                        <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                            A humanitarian aid platform that bridges the gap between local community needs and global
-                            support for Build for Impact Hackathon 2026.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">HTML</span>
-                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Tailwind
-                                CSS</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Vue.js</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">PostgreSQL</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">SEA-LION</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">OpenAI</span>
-                            <span
-                                class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Gemini</span>
-                        </div>
-                        <div class="mt-auto flex gap-3 pt-4 border-t border-slate-300">
-                            <a href="https://github.com/brandonkoh01/Beacon"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary-500 hover:text-white transition-colors">
-                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
+    <!-- Project Section -->
+    <section id="projects"
+        class="flex flex-col px-8 py-20 sm:px-12 md:flex-row md:justify-center md:gap-[70px] lg:px-[100px] xl:px-[170px]">
+        <div
+            class="mb-8 text-left text-[0.72rem] font-bold uppercase tracking-[0.22em] text-slate-900 md:mb-0 md:w-[200px] md:shrink-0 md:text-right lg:mr-0">
+            Project
         </div>
-    </section>
-    <!-- Skills Section -->
-    <section id="skills" class="py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Skills</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Programming Languages -->
-                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
-                    <div
-                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white mx-auto mb-4">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-2 justify-center">
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">Python</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">Java</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">JavaScript</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">TypeScript</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">C#</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">PHP</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-primary-500 hover:bg-primary-500 hover:text-white transition-colors cursor-default">SQL</span>
-                    </div>
+        <div class="w-full max-w-[650px] space-y-12 pl-6 md:pl-0">
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        Chariots Mobile
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    Redeveloped a last-mile delivery mobile app serving Singapore's public healthcare institutions for
+                    time-critical medicine delivery.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">TypeScript</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Expo</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">SQLite</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">MongoDB</span>
                 </div>
+            </article>
 
-                <!-- Frontend Development -->
-                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
-                    <div
-                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white mx-auto mb-4">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Frontend Development</h3>
-                    <div class="flex flex-wrap gap-2 justify-center">
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">React</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">Vue.js</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">HTML</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">CSS</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">Tailwind
-                            CSS</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-purple-500 hover:bg-purple-500 hover:text-white transition-colors cursor-default">Bootstrap</span>
-                    </div>
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        Route Optimisation API
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    Built a route optimisation API for logistics providers delivering medicine across Singapore's public
+                    healthcare network.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Java</span>
+                    <span class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Spring
+                        Boot</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Jsprit</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">OSRM</span>
                 </div>
+            </article>
 
-                <!-- Backend & Mobile -->
-                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
-                    <div
-                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white mx-auto mb-4">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-                            <line x1="6" y1="6" x2="6.01" y2="6" />
-                            <line x1="6" y1="18" x2="6.01" y2="18" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Backend & Mobile</h3>
-                    <div class="flex flex-wrap gap-2 justify-center">
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-blue-600 hover:bg-blue-500 hover:text-white transition-colors cursor-default">Spring
-                            Boot</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-blue-600 hover:bg-blue-500 hover:text-white transition-colors cursor-default">Expo</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-blue-600 hover:bg-blue-500 hover:text-white transition-colors cursor-default">ASP.NET
-                            Core</span>
-                    </div>
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        Analytics Dashboard
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    Designed an interactive dashboard with route visualisation, statistics, and filtering for logistics
+                    operations.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">HTML</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">JavaScript</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Leaflet</span>
+                    <span class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Tailwind
+                        CSS</span>
                 </div>
+            </article>
 
-                <!-- Database & Tools -->
-                <div class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300">
-                    <div
-                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white mx-auto mb-4">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <ellipse cx="12" cy="5" rx="9" ry="3" />
-                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Database</h3>
-                    <div class="flex flex-wrap gap-2 justify-center">
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">MongoDB</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">SQLite</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">PostgreSQL</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-green-600 hover:bg-green-500 hover:text-white transition-colors cursor-default">MySQL</span>
-                    </div>
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://betteragesolutions.com/#solutions" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        SecureTag
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    Created an NFC-based authenticity verification mobile app for maritime logistics documents.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">C#</span>
+                    <span class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">ASP.NET
+                        Core</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Xamarin</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">MongoDB</span>
                 </div>
-            </div>
-        </div>
-    </section>
+            </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-slate-900">Contact Me</h2>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
-
-
-                    <!-- Location Card -->
-                    <div
-                        class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                        <div
-                            class="w-16 h-16 rounded-xl bg-red-500 flex items-center justify-center text-white mx-auto mb-4">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Location</h3>
-                        <p class="text-slate-700 text-sm">Singapore</p>
-                    </div>
-
-                    <!-- Email Card -->
-                    <div
-                        class="glass-card rounded-2xl p-8 text-center hover:-translate-y-2 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                        <div
-                            class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white mx-auto mb-4">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Email</h3>
-                        <a href="mailto:brandonkoh01@gmail.com"
-                            class="text-slate-700 text-sm hover:text-primary-500 transition-colors break-all">brandonkoh01@gmail.com</a>
-                    </div>
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://github.com/brandonkoh01/earthly" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        earthly
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    A web app incentivising eco-friendly habits through habit tracking, challenges, leaderboards, and
+                    rewards.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">HTML</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">CSS</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">JavaScript</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">PHP</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">MySQL</span>
                 </div>
+            </article>
 
-                <!-- Social Links Section -->
-                <div class="mt-12 text-center">
-                    <p class="text-slate-700 mb-6">My socials</p>
-                    <div class="flex justify-center gap-4">
-                        <a href="https://github.com/brandonkoh01" target="_blank" rel="noopener noreferrer"
-                            class="glass-card w-14 h-14 rounded-full flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
-                            aria-label="GitHub profile">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/brandonkohws" target="_blank" rel="noopener noreferrer"
-                            class="glass-card w-14 h-14 rounded-full flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
-                            aria-label="LinkedIn profile">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="mailto:brandonkoh01@gmail.com"
-                            class="glass-card w-14 h-14 rounded-full flex items-center justify-center text-slate-600 hover:bg-gradient-to-r from-primary-500 to-secondary-500 hover:text-white transition-all duration-300 hover:-translate-y-1"
-                            aria-label="Email contact">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                        </a>
-                    </div>
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://github.com/JericToh1/CS102-Smart-Attendance-System" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        Smart Attendance System
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    A smart attendance web application with real-time attendance marking and facial recognition.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Java</span>
+                    <span class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Spring
+                        Boot</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">OpenCV</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">MySQL</span>
                 </div>
-            </div>
+            </article>
+
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://plotandpedal.web.app/" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        Plot &amp; Pedal
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    An AI-powered web application for discovering, planning, and sharing cycling routes in Singapore.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Vue.js</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Bootstrap</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">PostgreSQL</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Gemini</span>
+                </div>
+            </article>
+
+            <article class="max-w-[600px]">
+                <h3 class="mb-2 text-base font-bold text-slate-900">
+                    <a href="https://github.com/brandonkoh01/Beacon" target="_blank" rel="noopener noreferrer"
+                        class="group inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                        Beacon
+                        <span class="ml-2 text-slate-900 transition-transform group-hover:translate-x-1"
+                            aria-hidden="true">&rarr;</span>
+                    </a>
+                </h3>
+                <p class="mb-4 text-sm font-light leading-6 text-slate-600">
+                    A humanitarian aid platform that bridges local community needs with global support.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Tailwind
+                        CSS</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Vue.js</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">PostgreSQL</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">OpenAI</span>
+                    <span
+                        class="rounded border border-slate-900 px-2 py-0.5 text-xs font-bold text-slate-900">Gemini</span>
+                </div>
+            </article>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-100 border-t border-slate-200 py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-slate-500 text-sm">Designed & built with ❤️ from Singapore.</p>
-            </div>
+    <footer
+        class="flex flex-col gap-8 px-8 py-12 text-xs font-bold sm:px-12 md:flex-row md:items-center md:justify-between lg:px-20">
+        <div class="text-center leading-5 text-slate-900 md:text-left">
+
+            <div>Brandon Koh &copy; 2026</div>
         </div>
     </footer>
 

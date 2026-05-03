@@ -25,6 +25,10 @@ class Navigation {
   }
 
   init() {
+    if (!this.navbar || this.navLinks.length === 0) {
+      return;
+    }
+
     this.setupScrollEffect();
     this.setupSmoothScroll();
     this.setupActiveLink();
