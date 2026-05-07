@@ -109,7 +109,7 @@
   position: relative;
 }
 
-.project-item .rounded {
+.project-item .rounded-full {
   transition:
     background-color 240ms ease-out,
     border-color 240ms ease-out,
