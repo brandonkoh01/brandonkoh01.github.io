@@ -98,7 +98,3 @@ class App {
 }
 
 new App();
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { App, ScrollAnimations };
-}
