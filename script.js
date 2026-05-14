@@ -7,6 +7,76 @@ const prefersReducedMotion = () => (
   && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 );
 
+class BackToTopButton {
+  constructor() {
+    this.button = document.querySelector('[data-back-to-top]');
+    this.scrollThreshold = 0;
+    this.isVisible = false;
+    this.isTicking = false;
+
+    this.init();
+  }
+
+  init() {
+    if (!this.button) {
+      return;
+    }
+
+    this.updateThreshold();
+    this.updateVisibility();
+
+    window.addEventListener('scroll', () => this.requestVisibilityUpdate(), { passive: true });
+    window.addEventListener('resize', () => {
+      this.updateThreshold();
+      this.requestVisibilityUpdate();
+    }, { passive: true });
+    this.button.addEventListener('click', () => this.scrollToTop());
+  }
+
+  updateThreshold() {
+    this.scrollThreshold = Math.max(700, window.innerHeight * 0.75);
+  }
+
+  requestVisibilityUpdate() {
+    if (this.isTicking) {
+      return;
+    }
+
+    this.isTicking = true;
+    window.requestAnimationFrame(() => {
+      this.updateVisibility();
+      this.isTicking = false;
+    });
+  }
+
+  updateVisibility() {
+    const shouldShow = window.scrollY > this.scrollThreshold;
+
+    if (shouldShow === this.isVisible) {
+      return;
+    }
+
+    this.isVisible = shouldShow;
+    this.button.classList.toggle('opacity-100', shouldShow);
+    this.button.classList.toggle('translate-y-0', shouldShow);
+    this.button.classList.toggle('scale-100', shouldShow);
+    this.button.classList.toggle('pointer-events-auto', shouldShow);
+    this.button.classList.toggle('opacity-0', !shouldShow);
+    this.button.classList.toggle('translate-y-3', !shouldShow);
+    this.button.classList.toggle('scale-95', !shouldShow);
+    this.button.classList.toggle('pointer-events-none', !shouldShow);
+    this.button.setAttribute('aria-hidden', String(!shouldShow));
+    this.button.tabIndex = shouldShow ? 0 : -1;
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
+  }
+}
+
 class ScrollAnimations {
   constructor() {
     this.animatedElements = $$('.reveal-on-scroll');
@@ -94,6 +164,7 @@ class App {
     document.documentElement.classList.add('motion-ready');
 
     new ScrollAnimations();
+    new BackToTopButton();
   }
 }
 
